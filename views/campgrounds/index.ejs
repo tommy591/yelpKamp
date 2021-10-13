@@ -1,0 +1,40 @@
+<% layout('layout/boilerplate') -%>
+<div class="jumbotron">
+    <h1 class="display-4 mt-2">Welcome to Yelp Kamp</h1>
+    <p class="lead">
+        We are glad that you could join us today.<br />
+        Feel free to expolre all of campsites or add a campground, so have fun
+        an happy camping!!
+    </p>
+    <hr />
+</div>
+
+<% for (let campground of campgrounds) { %>
+<div class="card mb-2" style="width: 55rem">
+    <div class="row">
+        <div class="col-md-4 mt-2">
+            <img
+                src="<%= campground.image %> "
+                class="card-img-top img-thumbnail "
+                alt="..."
+            />
+        </div>
+            <div class="card-body col-md-8">
+                <h5 class="card-title">
+                    <strong><%= campground.name %></strong>
+                </h5>
+                <h6 class="text-muted"><em><%= campground.location %></em></h6>
+                <p class="card-text">
+                    <strong>$<%= campground.price %>/per night</strong>
+                </p>
+                <p class="card-text"><%= campground.description %></p>
+                <a
+                    href="/campgrounds/<%= campground._id %>"
+                    class="btn btn-primary btn-sm"
+                    >More Info</a
+                >
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>

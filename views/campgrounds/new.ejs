@@ -1,0 +1,78 @@
+<% layout('./layout/boilerplate') -%>
+
+<div class="row">
+    <div class="card col-md-6 offset-md-3 mb-2">
+        <h1 class="text-center">Add Campground</h1>
+        <div class="form-group">
+            <form action="/campgrounds" method="POST">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4 form-group">
+                        <div class="input-group">
+                            <label class="form-lable" for="name">Name</label>
+                            <input
+                                class="form-control-sm"
+                                type="text"
+                                id="name"
+                                name="campground[name]"
+                            />
+                        </div>
+                        <label class="form-lable" for="location"
+                            >Location</label
+                        >
+                        <input
+                            class="form-control-sm"
+                            type="text"
+                            id="location"
+                            name="campground[location]"
+                        />
+                        <div class="input-group mb-2">
+                            <label class="form-lable" for="price">Price</label>
+                            <span class="input-group-text-md">$</span>
+                            <input
+                                type="text"
+                                id="price"
+                                name="campground[price]"
+                                placeholder="0.00"
+                                class="form-control-sm"
+                                aria-label="Amount (to the nearest dollar)"
+                            />
+                            <!-- <span class="input-group-text">.00</span> -->
+                        </div>
+
+                        <div class="mb-1 input-group">
+                            <label class="form-lable" for="description"
+                                >Description</label
+                            >
+                            <textarea
+                                class="form-control-md"
+                                id="description"
+                                rows="3"
+                                name="campground[description]"
+                            ></textarea>
+                        </div>
+                        <div class="input-group mb-1">
+                            <label class="form-lable" for="image"
+                                >Image url..</label
+                            >
+                            <input
+                                class="form-control-sm"
+                                type="text"
+                                id="image"
+                                name="campground[image]"
+                                alt="yelp camp picture here"
+                            />
+                        </div>
+                        <button class="btn btn-sm btn-info btn-block">
+                            Add Campground
+                        </button>
+                        <a
+                            class="btn btn-secondary btn-sm btn-block"
+                            href="/campgrounds"
+                            >Back to camp</a
+                        >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
