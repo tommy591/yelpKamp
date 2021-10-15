@@ -1,39 +1,41 @@
 <% layout('./layout/boilerplate') -%>
 <div class="row">
-    <div class="card col-sm-10 col-md-6 offset-md-3 col-lg-6 col-xl-6 mb-2">
-        <img
-            src="<%= campground.image %> "
-            class="card-img-top img-thumbnail"
-            alt="camping tents"
-        />
+    <div class="col-6 offset-3">
+        <div class="card mb-2">
+            <img
+                src="<%= campground.image %> "
+                class="card-img-top img-fluid"
+                alt="camping tents"
+            />
 
-        <div class="card-body pd-auto">
-            <h5 class="card-title">
-                <strong><%= campground.name %></strong>
-            </h5>
-            <h6><em><%= campground.location %></em></h6>
-            <p class="card-text">
-                <strong>$<%= campground.price %>/per night</strong>
-            </p>
-            <p class="card-text"><%= campground.description %></p>
-
-            <form
-                action="/campgrounds/<%=campground._id%>?_method=DELETE"
-                method="post"
-            >
-                <p>
-                    <button class="btn btn-sm btn-danger btn-block">
-                        DELETE
-                    </button>
-                </p>
-            </form>
-            <p>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <strong><%= campground.name %></strong>
+                </h5>
+                <p class="card-text"><%= campground.description %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-muted">
+                    <em><%= campground.location %></em>
+                </li>
+                <li class="list-group-item">
+                    <em>$<%= campground.price%>/night</em>
+                </li>
+            </ul>
+            <div class="card-body">
                 <a
-                    class="btn btn-sm btn-info btn-block"
+                    class="card-link btn btn-info"
                     href="/campgrounds/<%=campground._id%>/edit "
-                    >Edit</a
+                    >Edit Kamp</a
                 >
-            </p>
+                <form
+                    action="/campgrounds/<%=campground._id%>?_method=DELETE"
+                    method="post"
+                    class="d-inline"
+                >
+                    <button class="btn btn-danger">DELETE</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

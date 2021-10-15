@@ -3,7 +3,7 @@
     <h1 class="display-4 mt-2">Welcome to Yelp Kamp</h1>
     <p class="lead">
         We are glad that you could join us today.<br />
-        Feel free to expolre all of campsites or add a campground, so have fun
+        Please feel free to expolre all of our wonderful campsites or add a campground an share with others alike.<br/>So have fun
         an happy camping!!
     </p>
     <hr />
@@ -15,23 +15,26 @@
         <div class="col-md-4 mt-2">
             <img
                 src="<%= campground.image %> "
-                class="card-img-top img-thumbnail "
+                class="card-img-top img-fluid img-thumbnail"
                 alt="..."
             />
         </div>
-            <div class="card-body col-md-8">
+        <div class="col-md-8">
+            <div class="card-body">
                 <h5 class="card-title">
                     <strong><%= campground.name %></strong>
                 </h5>
+
+                <p class="card-text"><%= campground.description %></p>
                 <h6 class="text-muted"><em><%= campground.location %></em></h6>
                 <p class="card-text">
                     <strong>$<%= campground.price %>/per night</strong>
                 </p>
-                <p class="card-text"><%= campground.description %></p>
+
                 <a
                     href="/campgrounds/<%= campground._id %>"
                     class="btn btn-primary btn-sm"
-                    >More Info</a
+                    ><%= campground.name %></a
                 >
             </div>
         </div>
